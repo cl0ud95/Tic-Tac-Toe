@@ -60,5 +60,7 @@ class TestPlayer(unittest.TestCase):
         self.assertEqual(self.fake_player.play(self.fake_matrix, 1, 6),
             [self.successful_matrix, 0, 0, 7])
                        
-if __name__ == '__main__': 
-    unittest.main()
+suite_board = unittest.TestLoader().loadTestsFromTestCase(TestBoard)
+unittest.TextTestRunner(verbosity=2).run(suite_board)
+suite_player = unittest.TestLoader().loadTestsFromTestCase(TestPlayer)
+unittest.TextTestRunner(verbosity=2).run(suite_player)
